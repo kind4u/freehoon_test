@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="
 		http://mybatis.org/schema/mybatis-spring
 		http://mybatis.org/schema/mybatis-spring.xsd
 		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<context:component-scan
+		base-package="com.freehoon.web.board.dao" />
 	<!-- dataSource 객체 설정 -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver" />
+			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url"
-			value="jdbc:mysql://54.180.103.167:58635/MESS?
-		useSSL=false&amp;serverTimezone=Asia/Seoul" />
+			value="jdbc:log4jdbc:mysql://54.180.116.175:56624/MESS?useUnicode=true&amp;characterEncoding=UTF8&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
 		<property name="username" value="mess"></property>
 		<property name="password" value="mess"></property>
 	</bean>
