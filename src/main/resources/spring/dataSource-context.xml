@@ -19,7 +19,7 @@
 		<property name="driverClassName"
 			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url"
-			value="jdbc:log4jdbc:mysql://54.180.116.175:56624/MESS?useUnicode=true&amp;characterEncoding=UTF8&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
+			value="jdbc:log4jdbc:mysql://13.124.132.244:59523/MESS?useUnicode=true&amp;characterEncoding=UTF8&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
 		<property name="username" value="mess"></property>
 		<property name="password" value="mess"></property>
 	</bean>
