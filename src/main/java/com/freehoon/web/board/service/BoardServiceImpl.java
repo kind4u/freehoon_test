@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.freehoon.web.board.dao.BoardDAO;
 import com.freehoon.web.board.model.BoardVO;
+import com.freehoon.web.error.controller.NotFoundException;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -28,8 +29,20 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardVO getBoardContent(int bid) throws Exception {
+		BoardVO boardVO = new BoardVO();
 		boardDAO.updateViewCnt(bid);
-		return boardDAO.getBoardContent(bid);
+		boardVO = boardDAO.getBoardContent(bid);
+		
+		// Cate_cd에 컬럼에서 저장할 수 있는 크기보다 큰 문자열을 저장하도록 셋팅 // 수정 SQL문 처리 시 에러 발생
+		/*
+		 * try { boardVO.setBid(bid);
+		 * boardVO.setCate_cd("1111111111111111111111111111111111111111");
+		 * boardDAO.updateBoard(boardVO); } catch (RuntimeException e) { throw new
+		 * NotFoundException(); }
+		 */
+		
+		boardDAO.updateBoard(boardVO);
+		return boardVO;
 	}
 
 	@Override

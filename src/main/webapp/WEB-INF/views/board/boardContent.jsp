@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -12,12 +12,12 @@
 
 <title>board</title>
 <script>
-	// ¸ñ·ÏÀ¸·Î ÀÌµ¿ ÀÌº¥Æ® Ã³¸®
+	// ëª©ë¡ìœ¼ë¡œ ì´ë™ ì´ë²¤íŠ¸ ì²˜ë¦¬
 	$(document).on('click','#btnList',function()	{
 		location.href = "${pageContext.request.contextPath}/board/getBoardList";
 	});
 	
-	// ¼öÁ¤ ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
+	// ìˆ˜ì • ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸
 	$(document).on('click','#btnUpdate',function()	{
 		var url = "${pageContext.request.contextPath}/board/editForm";
 		url = url + "?bid="+${boardContent.bid};
@@ -26,7 +26,7 @@
 		location.href = url;
 	});
 	
-	// »èÁ¦ ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
+	// ì‚­ì œ ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸
 	$(document).on('click','#btnDelete',function()	{
 		var url = "${pageContext.request.contextPath}/board/deleteBoard";
 		url = url + "?bid=" + ${boardContent.bid};
@@ -51,9 +51,9 @@
 			</div>
 			
 			<div style="margin-top : 20px">
-				<button type="button" class="btn btn-sm btn-primary" id="btnUpdate">¼öÁ¤</button>
-				<button type="button" class="btn btn-sm btn-primary" id="btnDelete">»èÁ¦</button>
-				<button type="button" class="btn btn-sm btn-primary" id="btnList">¸ñ·Ï</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btnUpdate">ìˆ˜ì •</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btnDelete">ì‚­ì œ</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btnList">ëª©ë¡</button>
 			</div>
 		</div>
 	</article>
